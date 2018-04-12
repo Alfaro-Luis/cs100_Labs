@@ -3,128 +3,127 @@
 
 #include <stddef.h>
 #include <cmath>
-#include <string>
-#include <sstream>
-// This will be our opperand
-class Op
-{
-public:
-	std::string data;
-	Op *left;
-	Op *right;
 
-	Op(char data){
-		this->data = data;
-		this->left = NULL;
+
+//This is our base class
+class base {
+public:
+	double data;
+	base *right;
+	base *left;
+
+	/* constructors */
+	base() {
+		this->data = 0;
 		this->right = NULL;
+		this->left = NULL;
 	}
 
-	std::string checkdata()
+	base(base *rightone, base *leftone)
 	{
+		this->right = rightone;
+		this->left = leftone;
+		this->data = evaluate();
+	}
+
+	/*My Functions*/
+
+	/* pure virtual functions */
+	virtual double evaluate() = 0;
+};
+// This will be our opperand
+class Op :public base
+{
+public:
+	//Constructor
+	Op() {
+		this->data = 0;
+	}
+
+	Op(double x)
+	{
+		this->data = x;
+	}
+	//Functions
+	double evaluate() {
+		return this->data;
+	}
+};
+
+class Add :public base
+{
+public:
+	Add(base *leftop, base *rightop) {
+		this->right = rightop;
+		this->left = leftop;
+		this->data = this->left->evaluate() + this->right->evaluate();
+
+	}
+	double evaluate() {
+		this->data = this->left->evaluate() + this->right->evaluate();
 		return this->data;
 	}
 
+};
+
+class Sub :public base
+{
+public:
+	Sub(base *leftop, base *rightop) {
+		this->right = rightop;
+		this->left = leftop;
+		this->data = this->left->evaluate() - this->right->evaluate();
+
+	}
+	double evaluate() {
+		this->data = this->left->evaluate() - this->right->evaluate();
+		return this->data;
+	}
 	
 };
 
-class Mult :public Op
+class Mult :public base
 {
 public:
-	int mult()
-	{
-		std::string l, r;
-		l = this->left->checkdata();
-		r = this->right->checkdata();
-		int leftop = std::stoi(l);
-		int rightop = std::stoi(r);
-		return leftop * rightop;
+	Mult(base *leftop, base *rightop) {
+		this->right = rightop;
+		this->left = leftop;
+		this->data = this->left->evaluate() * this->right->evaluate();
+
+	}
+	double evaluate() {
+		this->data = this->left->evaluate() * this->right->evaluate();
+		return this->data;
 	}
 };
 
-class Div :public Op
+class Div :public base
 {
 public:
-	double div()
-	{
-		std::string l, r;
-		l = this->left->checkdata();
-		r = this->right->checkdata();
-		int leftop = std::stoi(l);
-		int rightop = std::stoi(r);
-		return leftop / rightop;
+	Div(base *leftop, base *rightop) {
+		this->right = rightop;
+		this->left = leftop;
+		this->data = this->left->evaluate() / this->right->evaluate();
+
 	}
-
-};
-
-class Add :public Op
-{
-public:
-	double add()
-	{
-		std::string l, r;
-		l = this->left->checkdata();
-		r = this->right->checkdata();
-		int leftop = std::stoi(l);
-		int rightop = std::stoi(r);
-		return leftop + rightop;
+	double evaluate() {
+		this->data = this->left->evaluate() / this->right->evaluate();
+		return this->data;
 	}
 };
 
-class Sub :public Op
+class Sqr :public base
 {
 public:
-	double sub()
+	Sqr(base *operand)
 	{
-		std::string l, r;
-		l = this->left->checkdata();
-		r = this->right->checkdata();
-		int leftop = std::stoi(l);
-		int rightop = std::stoi(r);
-		return leftop - rightop;
+		this->right = operand;
+		this->data = sqrt(right->evaluate());
 	}
-
-};
-
-class Sqr :public Op
-{
-public:
-	double sqr() 
-	{
-		std::string l, r;
-		l = this->left->checkdata();
-		r = this->right->checkdata();
-		int leftop = std::stoi(l);
-		int rightop = std::stoi(r);
-		return leftop * rightop;
+	double evaluate() {
+		this->data = sqrt(right->evaluate());
+		return this->data;
 	}
-};
-
-// Is this our Tree???
-class base {
-    public:
-
-        /* constructors */
-        base() {}
-
-		/*My Functions*/
-		bool amOp(char opCheck);
-		double performop();
-        /* pure virtual functions */
-        virtual double evaluate() = 0;
 };
 
 #endif // __component_h__
-
-bool base::amOp(char opCheck)
-{
-	if (opCheck == '*' || opCheck == '+' || opCheck == '-' || opCheck == '/' || opCheck == '^')
-	{
-		return true;
-	}
-	return false;
-}
-
-double base::performop()
-{
-
-}

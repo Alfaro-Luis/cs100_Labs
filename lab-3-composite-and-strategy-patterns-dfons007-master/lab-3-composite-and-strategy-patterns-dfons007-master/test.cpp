@@ -1,13 +1,14 @@
 #include <iostream>
-#include "composite.h"
-#include "vector_container.h"
-#include "list_container.h"
-#include "strategy.h"
+
+#include "component.h"
+//#include "vector_container.h"
+//#include "list_container.h"
+//#include "strategy.h"
 
 using namespace std;
 
 int main() {
-    Op* op1 = new Op(5);
+   /* Op* op1 = new Op(5);
     Op* op2 = new Op(2);
     Op* op3 = new Op(4);
     Op* op4 = new Op(6);
@@ -26,5 +27,11 @@ int main() {
     container->set_sort_function(new SelectionSort());
     container->sort();	
     cout << "Container After Sort: " << endl;
-    container->print();
+    container->print();*/
+	Op* op1 = new Op(5);
+	Op* op2 = new Op(6);
+	Add* C = new Add(op1, op2);
+	Mult* D = new Mult(C, op1);
+	cout << D->evaluate() << endl;
+
 };
