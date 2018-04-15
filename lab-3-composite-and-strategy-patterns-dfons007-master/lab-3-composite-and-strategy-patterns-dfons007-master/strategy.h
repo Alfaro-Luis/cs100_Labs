@@ -41,18 +41,34 @@ void SelectionSort::sort(Container* container)
 			if (container->at(j)->evaluate() < container->at(minindex)->evaluate())
 				minindex = j;
 		}
-		std::cout << "Swapping" << container->at(i)->evaluate() << " and " << container->at(minindex)->evaluate() << std::endl;
 		container->swap(i,minindex);
 	}
 
 }
 
 
-class BubbleSort :public Sort
+class BubbleSort:public Sort
 {
 public:
-
+	BubbleSort();
+	void sort(Container* container);
 };
+
+BubbleSort::BubbleSort()
+{
+}
+
+void BubbleSort::sort(Container* container)
+{
+	for (int i = 0; i < container->size() - 1; i++)
+	{
+		for (int j = 0; j < container->size() - i - 1; j++)
+		{
+			if (container->at(j)->evaluate() > container->at(j + 1)->evaluate())
+				container->swap(j, j + 1);
+		}
+	}
+}
 
 
 #endif // __STRATEGY_H__
