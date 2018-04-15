@@ -80,7 +80,19 @@ void VectorContainer::set_sort_function(Sort* sort_type)
 
 void VectorContainer::sort()
 {
-	this->sort_function->sort(this);
+	try {
+
+		if (this->sort_function == NULL)
+		{
+			throw sort_function;
+		}
+		else {
+			this->sort_function->sort(this);
+		}
+	}
+	catch (...) {
+		std::cout << "Sort Function is null. Please set a sort function." << "\n";
+	}
 }
 
 void VectorContainer::print()
@@ -89,7 +101,7 @@ void VectorContainer::print()
 	for (auto it = this->myContainer.begin(); it != this->myContainer.end(); it++)
 	{
 		element = *it;
-		std::cout << element->evaluate() << std::endl;
+		std::cout << element->evaluate() << "\n";
 	}
 }
 #endif 
