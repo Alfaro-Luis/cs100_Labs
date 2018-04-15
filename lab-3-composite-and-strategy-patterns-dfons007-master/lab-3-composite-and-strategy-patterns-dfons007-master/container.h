@@ -2,7 +2,6 @@
 #define __CONTAINER_H__
 
 #include "component.h"
-
 class Sort;
 
 class Container {
