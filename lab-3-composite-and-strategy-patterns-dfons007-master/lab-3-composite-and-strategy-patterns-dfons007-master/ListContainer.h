@@ -47,7 +47,6 @@ base* ListContainer::at(int i)
 	it = this->myListContainer.begin();
 	std::advance(it, i);
 	temp = *it;
-	std::cout << temp->evaluate() << std::endl;
 	return temp;
 }
 void ListContainer::swap(int i, int j)
@@ -63,12 +62,10 @@ void ListContainer::swap(int i, int j)
 void ListContainer::print()
 {
 	base* element;
-	int counter = 1;
 	for (auto it = this->myListContainer.begin(); it != this->myListContainer.end(); it++)
 	{
 		element = *it;
-		std::cout << element->evaluate() << " " << counter << std::endl;
-		counter++;
+		std::cout << element->evaluate() << "\n";
 	}
 }
 
@@ -84,6 +81,18 @@ void ListContainer::set_sort_function(Sort* sort_type)
 
 void ListContainer::sort()
 {
-	this->sort_function->sort(this);
+	try {
+
+		if (this->sort_function == NULL)
+		{
+			throw sort_function;
+		}
+		else {
+			this->sort_function->sort(this);
+		}
+	}
+	catch (...) {
+		std::cout << "Sort Function is null. Please set a sort function." << "\n" << "\n";
+	}
 }
 #endif 
