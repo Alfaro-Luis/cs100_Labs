@@ -1,6 +1,11 @@
 #ifndef __component_h__
 #define __component_h__
 
+/*
+	Name: Daniel Fonseca SID: 861222722 Email: dfons007@ucr.edu Lab Section: 022
+	CS100 Lab 1 - Composite and Strategy
+*/
+
 #include <stddef.h>
 #include <cmath>
 

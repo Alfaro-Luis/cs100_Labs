@@ -1,6 +1,11 @@
 #ifndef LISTCONTAINER
 #define LISTCONTAINER
 
+/*
+	Name: Daniel Fonseca SID: 861222722 Email: dfons007@ucr.edu Lab Section: 022
+	CS100 Lab 1 - Composite and Strategy
+*/
+
 #include <list>
 #include <iostream>
 #include "container.h"

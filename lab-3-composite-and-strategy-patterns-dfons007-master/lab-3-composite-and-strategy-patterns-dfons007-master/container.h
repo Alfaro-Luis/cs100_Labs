@@ -1,6 +1,11 @@
 #ifndef __CONTAINER_H__
 #define __CONTAINER_H__
 
+/*
+	Name: Daniel Fonseca SID: 861222722 Email: dfons007@ucr.edu Lab Section: 022
+	CS100 Lab 1 - Composite and Strategy
+*/
+
 #include "component.h"
 class Sort;
 
