@@ -32,7 +32,7 @@ int main() {
 	cout << "Before Sort" << "\n" << "\n";
 	container->print();
 	container->sort();
-	cout << "After Sort" << "\n" << "\n";
+	cout << "\n" << "After Sort" << "\n" << "\n";
 	container->print();
 
 	cout << "\n" << "List Container Bubble sort" << "\n" << "\n";

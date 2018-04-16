@@ -18,6 +18,9 @@ Sort::Sort()
 
 }
 
+/*
+	Selection Sort Class and Functions
+*/
 
 class SelectionSort :public Sort
 {
@@ -46,6 +49,9 @@ void SelectionSort::sort(Container* container)
 
 }
 
+/*
+	Bubble Sort Class and Function
+*/
 
 class BubbleSort:public Sort
 {

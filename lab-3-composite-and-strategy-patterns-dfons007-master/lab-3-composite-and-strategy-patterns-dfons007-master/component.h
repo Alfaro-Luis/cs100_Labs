@@ -22,6 +22,9 @@ public:
 	virtual double evaluate() = 0;
 };
 
+/*
+	Operand Class and Function
+*/
 
 class Op :public base
 {
@@ -42,6 +45,10 @@ public:
 	}
 };
 
+/*
+	Add Class and Function
+*/
+
 class Add :public base
 {
 public:
@@ -58,6 +65,10 @@ public:
 		return this->data;
 	}
 };
+
+/*
+	Sub Class and Function
+*/
 
 class Sub :public base
 {
@@ -76,6 +87,10 @@ public:
 	}
 };
 
+/*
+	Mult Class and Function
+*/
+
 class Mult :public base
 {
 public:
@@ -92,6 +107,10 @@ public:
 		return this->data;
 	}
 };
+
+/*
+	Div Class and Function
+*/
 
 class Div :public base
 {
@@ -110,6 +129,10 @@ public:
 	}
 };
 
+/*
+	Square Class and Function
+*/
+
 class Sqr :public base
 {
 public:
@@ -117,7 +140,7 @@ public:
 	{
 		this->right = rightop;
 		this->left = NULL;
-		this->data = sqrt(right->evaluate());
+		this->data = pow(right->evaluate(), double(2));
 	}
 
 	double evaluate()
