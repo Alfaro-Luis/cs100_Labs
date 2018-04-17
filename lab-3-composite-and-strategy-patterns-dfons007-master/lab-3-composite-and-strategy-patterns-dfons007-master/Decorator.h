@@ -12,10 +12,10 @@ public:
 	Ceiling Class
 */
 
-class ceiling :public BaseDecorator
+class Ceiling :public BaseDecorator
 {
 public:
-	ceiling();
+	Ceiling();
 };
 
 /*
