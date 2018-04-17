@@ -14,18 +14,20 @@ using namespace std;
 
 int main() {
 
-	Op* op5 = new Op(5);
-	Op* op4 = new Op(4);
-	Op* op12 = new Op(12);
-	Op* op13 = new Op(13);
-	Add* C = new Add(op5, op4); // 4+5 = 9
-	Mult* D = new Mult(C, op4); // 9* 4 = 36
-	Div* E = new Div(C, D); // 9 / 36 = 0.25
-	Sqr* F = new Sqr(op5); // 5^2 = 25
-	cout << C->evaluate() << "\n";
-	cout << D->evaluate() << "\n";
-	cout << E->evaluate() << "\n";
-	cout << F->evaluate() << "\n";
+	Op* op5 = new Op(10);
+	Op* op4 = new Op(12);
+	Op* op12 = new Op(14);
+	Op* op13 = new Op(10);
+	cout << "Component Tests: Add, Mult, Div, Sqr" << endl;
+	Add* C = new Add(op5, op4); 
+	cout << op5->evaluate() << " + " << op4->evaluate() << " = " << C->evaluate() << "\n";
+	Mult* D = new Mult(C, op4); 
+	cout << C->evaluate() << " * " << op4->evaluate() << " = " << D->evaluate() <<"\n";
+	Div* E = new Div(C, D); 
+	cout << C->evaluate() << " / " << D->evaluate() << " = " << E->evaluate() << "\n";
+	Sqr* F = new Sqr(op5);
+	cout << op5->evaluate() << "^2 = " << F->evaluate() << "\n";
+	
 
 
 
