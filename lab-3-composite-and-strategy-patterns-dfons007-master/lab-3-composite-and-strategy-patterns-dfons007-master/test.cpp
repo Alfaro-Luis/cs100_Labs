@@ -6,6 +6,7 @@
 
 /*
 	Name: Daniel Fonseca SID: 861222722 Email: dfons007@ucr.edu Lab Section: 022 
+	Name: Luis Alfaro SID: 861240301 Email: lalfa003@ucr.edu Lab Section: 022
 	CS100 Lab 1 - Composite and Strategy
 */
 
@@ -17,10 +18,10 @@ int main() {
 	Op* op4 = new Op(4);
 	Op* op12 = new Op(12);
 	Op* op13 = new Op(13);
-	Add* C = new Add(op5, op4);
-	Mult* D = new Mult(C, op4);
-	Div* E = new Div(C, D);
-	Sqr* F = new Sqr(op5);
+	Add* C = new Add(op5, op4); // 4+5 = 9
+	Mult* D = new Mult(C, op4); // 9* 4 = 36
+	Div* E = new Div(C, D); // 9 / 36 = 0.25
+	Sqr* F = new Sqr(op5); // 5^2 = 25
 	cout << C->evaluate() << "\n";
 	cout << D->evaluate() << "\n";
 	cout << E->evaluate() << "\n";
@@ -40,7 +41,7 @@ int main() {
 	container->add_element(op12);
 	container->add_element(op13);
 
-	cout << "Vector Container Selection sort" << "\n" << "\n";
+	cout << "\n" << "Vector Container Selection sort" << "\n" << "\n";
 
 	cout << "Before Sort" << "\n" << "\n";
 	container->print();
