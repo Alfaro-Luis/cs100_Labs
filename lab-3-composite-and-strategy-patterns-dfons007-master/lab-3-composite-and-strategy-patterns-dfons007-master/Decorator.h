@@ -4,42 +4,25 @@
 #include "component.h"
 class BaseDecorator : public base
 {
-protected:
-	base* operand;
 public:
-	BaseDecorator()
-	{
-		operand = NULL;
-	}
-	BaseDecorator(base* x)
-	{
-		operand = x;
-	}
+	BaseDecorator();
 };
 
 /*
 	Ceiling Class
 */
 
-class ceiling :protected BaseDecorator
+class Ceiling :public BaseDecorator
 {
 public:
-	ceiling(base* x)
-	{
-		this->operand = x;
-	}
-	
-	double evaulate()
-	{
-		ceil(this->operand->evaluate());
-	}
+	Ceiling();
 };
 
 /*
 	Absolute Value Class
 */
 
-class AbsoluteValue :protected BaseDecorator
+class AbsoluteValue :public BaseDecorator
 {
 public:
 	AbsoluteValue();
@@ -49,7 +32,7 @@ public:
 /*
 	Floor Class
 */
-class Floor :protected BaseDecorator
+class Floor :public BaseDecorator
 {
 public:
 	Floor();
