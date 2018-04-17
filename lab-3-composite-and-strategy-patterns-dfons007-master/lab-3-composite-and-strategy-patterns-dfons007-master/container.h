@@ -8,6 +8,7 @@
 */
 
 #include "component.h"
+
 class Sort;
 
 class Container {
@@ -39,20 +40,6 @@ class Container {
         // return container size;
 		virtual int size() = 0;
 };
-
-Container::Container(Sort * function)
-{
-	this->sort_function = function;
-}
-
-void Container::set_sort_function(Sort* sort_type)
-{
-	this->sort_function = sort_type;
-}
-
-
-
-
 
 
 #endif // __CONTAINER_H__

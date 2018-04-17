@@ -13,15 +13,10 @@ CS100 Lab 1 - Composite and Strategy
 // This will be our opperand
 class base {
 public:
-	double data;
-	base *right;
-	base *left;
+
 
 	/* constructors */
 	base() {
-		this->data = 0;
-		this->right = NULL;
-		this->left = NULL;
 	}
 
 	/* pure virtual functions */
@@ -34,19 +29,17 @@ public:
 
 class Op :public base
 {
+private:
+	double data;
 public:
 	Op()
 	{
 		this->data = 0;
-		this->right = NULL;
-		this->left = NULL;
 	}
 
 	Op(double x)
 	{
 		this->data = x;
-		this->right = NULL;
-		this->left = NULL;
 	}
 	
 	double evaluate() {
@@ -60,20 +53,15 @@ public:
 
 class Add :public base
 {
+private:
+	double data;
+	base *right;
+	base *left;
 public:
 
-	Add(base *leftop, base *rightop)
-	{
-		this->right = rightop;
-		this->left = leftop;
-		this->data = this->left->evaluate() + this->right->evaluate();
-	}
+	Add(base *leftop, base *rightop);
 	
-	double evaluate()
-	{
-		this->data = this->left->evaluate() + this->right->evaluate();
-		return this->data;
-	}
+	double evaluate();
 };
 
 /*
@@ -82,19 +70,14 @@ public:
 
 class Sub :public base
 {
+private:
+		double data;
+		base *right;
+		base *left;
 public:
-	Sub(base *leftop, base *rightop)
-	{
-		this->right = rightop;
-		this->left = leftop;
-		this->data = this->left->evaluate() - this->right->evaluate();
-	}
+	Sub(base *leftop, base *rightop);
 
-	double evaluate()
-	{
-		this->data = this->left->evaluate() - this->right->evaluate();
-		return this->data;
-	}
+	double evaluate();
 };
 
 /*
@@ -103,19 +86,14 @@ public:
 
 class Mult :public base
 {
+private:
+	double data;
+	base *right;
+	base *left;
 public:
-	Mult(base *leftop, base *rightop)
-	{
-		this->right = rightop;
-		this->left = leftop;
-		this->data = this->left->evaluate() * this->right->evaluate();
-	}
+	Mult(base *leftop, base *rightop);
 
-	double evaluate()
-	{
-		this->data = this->left->evaluate() * this->right->evaluate();
-		return this->data;
-	}
+	double evaluate();
 };
 
 /*
@@ -124,19 +102,14 @@ public:
 
 class Div :public base
 {
+private:
+	double data;
+	base *right;
+	base *left;
 public:
-	Div(base *leftop, base *rightop)
-	{
-		this->right = rightop;
-		this->left = leftop;
-		this->data = this->left->evaluate() / this->right->evaluate();
-	}
+	Div(base *leftop, base *rightop);
 
-	double evaluate()
-	{
-		this->data = this->left->evaluate() / this->right->evaluate();
-		return this->data;
-	}
+	double evaluate();
 };
 
 /*
@@ -145,19 +118,13 @@ public:
 
 class Sqr :public base
 {
+private:
+	double data;
+	base *right;
 public:
-	Sqr(base *rightop)
-	{
-		this->right = rightop;
-		this->left = NULL;
-		this->data = pow(right->evaluate(), double(2));
-	}
+	Sqr(base *rightop);
 
-	double evaluate()
-	{
-		this->data = pow(right->evaluate(), double(2));
-		return 	this->data;
-	}
+	double evaluate();
 };
 #endif // __component_h__
 

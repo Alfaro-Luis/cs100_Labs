@@ -1,8 +1,8 @@
 #include <iostream>
 #include "component.h"
+#include "strategy.h"
 #include "VectorContainer.h"
 #include "ListContainer.h"
-#include "strategy.h"
 
 /*
 	Name: Daniel Fonseca SID: 861222722 Email: dfons007@ucr.edu Lab Section: 022 
