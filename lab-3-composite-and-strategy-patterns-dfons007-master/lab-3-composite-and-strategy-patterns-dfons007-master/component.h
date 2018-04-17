@@ -37,7 +37,10 @@ public:
 	Op()
 	{
 		this->data = 0;
+		this->right = NULL;
+		this->left = NULL;
 	}
+
 	Op(double x)
 	{
 		this->data = x;
@@ -57,7 +60,8 @@ public:
 class Add :public base
 {
 public:
-	Add(base *rightop, base *leftop)
+
+	Add(base *leftop, base *rightop)
 	{
 		this->right = rightop;
 		this->left = leftop;
@@ -78,7 +82,7 @@ public:
 class Sub :public base
 {
 public:
-	Sub(base *rightop, base *leftop)
+	Sub(base *leftop, base *rightop)
 	{
 		this->right = rightop;
 		this->left = leftop;
@@ -99,7 +103,7 @@ public:
 class Mult :public base
 {
 public:
-	Mult(base *rightop, base *leftop)
+	Mult(base *leftop, base *rightop)
 	{
 		this->right = rightop;
 		this->left = leftop;
@@ -120,7 +124,7 @@ public:
 class Div :public base
 {
 public:
-	Div(base *rightop, base *leftop)
+	Div(base *leftop, base *rightop)
 	{
 		this->right = rightop;
 		this->left = leftop;
@@ -150,7 +154,7 @@ public:
 
 	double evaluate()
 	{
-		this->data = sqrt(right->evaluate());
+		this->data = pow(right->evaluate(), double(2));
 		return 	this->data;
 	}
 };

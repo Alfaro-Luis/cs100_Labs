@@ -19,9 +19,17 @@ int main() {
 	Op* op13 = new Op(13);
 	Add* C = new Add(op5, op4);
 	Mult* D = new Mult(C, op4);
+	Div* E = new Div(C, D);
+	Sqr* F = new Sqr(op5);
+	cout << C->evaluate() << "\n";
+	cout << D->evaluate() << "\n";
+	cout << E->evaluate() << "\n";
+	cout << F->evaluate() << "\n";
 
 
 
+
+	
 	VectorContainer* container = new VectorContainer(D);
 	ListContainer* listcontainer = new ListContainer(D);
 
@@ -55,7 +63,6 @@ int main() {
 	listcontainer->sort();
 	cout << "\n" << "After Sort" << "\n" << "\n";
 	listcontainer->print();
-
 
 	
 
