@@ -5,7 +5,9 @@
 class BaseDecorator : public base
 {
 public:
+	base* operand;
 	BaseDecorator();
+	BaseDecorator(base* x);
 };
 
 /*
@@ -15,7 +17,8 @@ public:
 class Ceiling :public BaseDecorator
 {
 public:
-	Ceiling();
+	Ceiling(base* x);
+	double evaluate();
 };
 
 /*
