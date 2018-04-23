@@ -3,12 +3,10 @@
 
 #include "Decorator.h"
 
-using namespace std;
-
 class AbsoluteValue :public BaseDecorator
 {
 public:
-	AbsoluteValue(base*);
+	AbsoluteValue(base* x);
 	double evaluate();
 	
 private: 

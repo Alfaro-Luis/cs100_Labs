@@ -3,12 +3,10 @@
 
 #include "Decorator.h" 
 
-using namespace std;
-
 class Floor :public BaseDecorator
 {
 public:
-	Floor(base*);
+	Floor(base* x);
 	double evaluate();
 	
 private: 

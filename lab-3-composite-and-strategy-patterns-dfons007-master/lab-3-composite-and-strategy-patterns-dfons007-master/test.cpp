@@ -172,4 +172,26 @@ int main() {
 	double num15 = AbsoluteValue(new Floor(op8)).evaluate();
 	cout << "Original #: " << op8->evaluate() << endl;
 	cout << "Abs(Floor()) #: " << num15 << endl;
+
+
+	cout << "\n" << "------------------------------------" << "\n";
+	cout << "Testing all classes put together" << "\n" << "\n";
+	cout << "The Ceiling of the Floor of the Absolute Value of -3.5" << "\n";
+	cout << "The value that should be yielded is 3." << "\n";
+	Ceiling* Test = new Ceiling(new Floor(new AbsoluteValue(new Op(-3.5))));
+	cout << "Final Value: " << Test->evaluate() << "\n";
+
+	cout << "------------------------------------" << "\n";
+	cout << "Testing all classes put together" << "\n" << "\n";
+	cout << "The Floor of the Absolute value of the Ceiling of -42.1" << "\n";
+	cout << "The value that should be yielded is 42." << "\n";
+	Floor* Test2 = new Floor(new AbsoluteValue(new Ceiling(new Op(-42.1))));
+	cout << "Final Value: " << Test2->evaluate() << "\n";
+
+	cout << "------------------------------------" << "\n";
+	cout << "Testing all classes put together" << "\n" << "\n";
+	cout << "The Absolute value of the ceiling of the floor of -23.2" << "\n";
+	cout << "The value that should be yielded is 24." << "\n";
+	AbsoluteValue* Test3 = new AbsoluteValue(new Ceiling(new Floor(new Op(-23.2))));
+	cout << "Final Value: " << Test3->evaluate() << "\n";
 };

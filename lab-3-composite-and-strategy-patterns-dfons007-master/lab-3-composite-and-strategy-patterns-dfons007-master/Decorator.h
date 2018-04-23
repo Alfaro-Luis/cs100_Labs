@@ -2,10 +2,6 @@
 #define DECORATOR
 
 #include "component.h"
-#include <math.h>
-
-using namespace std;
-
 
 class BaseDecorator : public base
 {
