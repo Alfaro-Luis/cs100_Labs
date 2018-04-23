@@ -2,44 +2,41 @@
 #define DECORATOR
 
 #include "component.h"
+
+using namespace std;
+
+
 class BaseDecorator : public base
 {
 public:
+
+	virtual double evaluate() = 0;
+	
+private: 
 	base* operand;
-	BaseDecorator();
-	BaseDecorator(base* x);
-};
-
-/*
-	Ceiling Class
-*/
-
-class Ceiling :public BaseDecorator
-{
-public:
-	Ceiling(base* x);
-	double evaluate();
-};
-
-/*
-	Absolute Value Class
-*/
-
-class AbsoluteValue :public BaseDecorator
-{
-public:
-	AbsoluteValue();
 };
 
 
-/*
-	Floor Class
-*/
-class Floor :public BaseDecorator
-{
-public:
-	Floor();
-};
+
+// /*
+// 	Absolute Value Class
+// */
+
+// class AbsoluteValue :public BaseDecorator
+// {
+// public:
+// 	AbsoluteValue(base*);
+// };
+
+
+// /*
+// 	Floor Class
+// */
+// class Floor :public BaseDecorator
+// {
+// public:
+// 	Floor(base*);
+// };
 
 
 #endif //DECORATOR
