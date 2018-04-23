@@ -1,6 +1,9 @@
 #include <iostream>
 #include "component.h"
 #include "strategy.h"
+#include "Decorator.h"
+#include "Ceiling.h"
+#include "AbsoluteValue.h"
 #include "VectorContainer.h"
 #include "ListContainer.h"
 
@@ -67,6 +70,53 @@ int main() {
 	cout << "\n" << "After Sort" << "\n" << "\n";
 	listcontainer->print();
 
-	
 
+	Op* op1 = new Op(1.5);
+	Op* op2 = new Op(2.5);
+	Op* op3 = new Op(3.5);
+	
+	/*
+	Ceiling Tests
+	*/
+	
+	double num = Ceiling(op1).evaluate();
+	cout << "------------------------------------" <<endl;
+	cout << "Ceiling Test (Decorator): " << endl << endl;
+	cout << "Original #: " << op1->evaluate() << endl;
+	cout << "Num w/ Ceiling Decorator: " << num << endl;
+	
+	double num2 = Ceiling(op2).evaluate();
+	cout << endl;
+	cout << "Original #: " << op2->evaluate() << endl;
+	cout << "Num w/ Ceiling Decorator: " << num2 << endl;
+	
+	double num3 = Ceiling(op3).evaluate();
+	cout << endl;
+	cout << "Original #: " << op3->evaluate() << endl;
+	cout << "Num w/ Ceiling Decorator: " << num3 << endl;
+	
+	Op* op6 = new Op(-4.5);
+	Op* op7 = new Op(-100.89);
+	Op* op8 = new Op(-398.75);
+	
+	cout << "------------------------------------" << endl;
+	cout << "Testing AbsoluteValue (Decorator): " << endl;
+	cout << endl;
+	double num4 = AbsoluteValue(op6).evaluate();
+	cout << "Negative #: " << op6->evaluate() << endl;
+	cout << "AbsoluteValue: " << num4 << endl;
+	
+	cout << endl;
+	double num5 = AbsoluteValue(op7).evaluate();
+	cout << "Negative #: " << op7->evaluate() << endl;
+	cout << "AbsoluteValue: " << num5 << endl;
+	
+	cout << endl;
+	double num6 = AbsoluteValue(op8).evaluate();
+	cout << "Negative #: " << op8->evaluate() << endl;
+	cout << "AbsoluteValue: " << num6 << endl;
+	
+	cout << "------------------------------------" << endl;
+	cout << "Testing Floor (Decorator): " << endl;
+	cout << endl;
 };
