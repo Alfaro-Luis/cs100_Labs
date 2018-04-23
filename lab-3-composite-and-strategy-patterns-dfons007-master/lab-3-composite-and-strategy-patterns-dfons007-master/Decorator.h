@@ -2,6 +2,7 @@
 #define DECORATOR
 
 #include "component.h"
+#include <math.h>
 
 using namespace std;
 
@@ -15,28 +16,6 @@ public:
 private: 
 	base* operand;
 };
-
-
-
-// /*
-// 	Absolute Value Class
-// */
-
-// class AbsoluteValue :public BaseDecorator
-// {
-// public:
-// 	AbsoluteValue(base*);
-// };
-
-
-// /*
-// 	Floor Class
-// */
-// class Floor :public BaseDecorator
-// {
-// public:
-// 	Floor(base*);
-// };
 
 
 #endif //DECORATOR
