@@ -140,7 +140,36 @@ int main() {
 	double num10 = AbsoluteValue(new Ceiling(op6)).evaluate();
 	cout << endl;
 	cout << "Find Ceiling then AbsoluteValue: " << endl;
+	cout << endl;
 	cout << "Original #: " << op6->evaluate() << endl;
 	cout << "Abs(Ceil()) #: " << num10 << endl;
+
+	double num11 = AbsoluteValue(new Ceiling(op7)).evaluate();
+	cout << endl;
+	cout << "Original #: " << op7->evaluate() << endl;
+	cout << "Abs(Ceil()) #: " << num11 << endl;
 	
+	double num12 = AbsoluteValue(new Ceiling(op8)).evaluate();
+	cout << endl;
+	cout << "Original #: " << op8->evaluate() << endl;
+	cout << "Abs(Ceil()) #: " << num12 << endl;
+	
+	cout << "------------------------------------" << endl;
+	cout << "Testing AbsoluteValue and Floor (Both Decorators): " << endl;
+	cout << endl;
+	cout << "Find Floor then AbsoluteValue: " << endl;
+	cout << endl;
+	double num13 = AbsoluteValue(new Floor(op6)).evaluate();
+	cout << "Original #: " << op6->evaluate() << endl;
+	cout << "Abs(Floor()) #: " << num13 << endl;
+	
+	cout << endl;
+	double num14 = AbsoluteValue(new Floor(op7)).evaluate();
+	cout << "Original #: " << op7->evaluate() << endl;
+	cout << "Abs(Floor()) #: " << num14 << endl;
+	
+	cout << endl;
+	double num15 = AbsoluteValue(new Floor(op8)).evaluate();
+	cout << "Original #: " << op8->evaluate() << endl;
+	cout << "Abs(Floor()) #: " << num15 << endl;
 };
