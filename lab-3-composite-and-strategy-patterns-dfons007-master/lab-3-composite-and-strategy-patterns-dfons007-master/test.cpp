@@ -4,6 +4,7 @@
 #include "Decorator.h"
 #include "Ceiling.h"
 #include "AbsoluteValue.h"
+#include "Floor.h"
 #include "VectorContainer.h"
 #include "ListContainer.h"
 
@@ -119,4 +120,27 @@ int main() {
 	cout << "------------------------------------" << endl;
 	cout << "Testing Floor (Decorator): " << endl;
 	cout << endl;
+	
+	double num7 = Floor(op1).evaluate();
+	cout << "Original #: " << op1->evaluate() << endl;
+	cout << "Floor #: " << num7 << endl;
+	
+	cout << endl;
+	double num8 = Floor(op2).evaluate();
+	cout << "Original #: " << op2->evaluate() << endl;
+	cout << "Floor #: " << num8 << endl;
+	
+	cout << endl;
+	double num9 = Floor(op3).evaluate();
+	cout << "Original #: " << op3->evaluate() << endl;
+	cout << "Floor #: " << num9 << endl;
+	
+	cout << "------------------------------------" << endl;
+	cout << "Testing AbsoluteValue and Ceiling (Both Decorators): " << endl;
+	double num10 = AbsoluteValue(new Ceiling(op6)).evaluate();
+	cout << endl;
+	cout << "Find Ceiling then AbsoluteValue: " << endl;
+	cout << "Original #: " << op6->evaluate() << endl;
+	cout << "Abs(Ceil()) #: " << num10 << endl;
+	
 };
