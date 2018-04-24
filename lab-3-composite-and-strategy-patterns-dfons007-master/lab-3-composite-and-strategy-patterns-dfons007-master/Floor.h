@@ -9,8 +9,6 @@ public:
 	Floor(base* x);
 	double evaluate();
 	
-private: 
-    base* operand;
 };
 
 #endif

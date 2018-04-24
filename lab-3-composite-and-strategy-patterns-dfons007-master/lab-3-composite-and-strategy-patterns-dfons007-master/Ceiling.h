@@ -9,8 +9,6 @@ public:
 	Ceiling(base* x);
 	double evaluate();
 	
-private: 
-    base* operand;
 };
 
 

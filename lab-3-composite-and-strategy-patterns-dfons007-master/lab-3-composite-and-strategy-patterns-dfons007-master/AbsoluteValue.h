@@ -9,8 +9,6 @@ public:
 	AbsoluteValue(base* x);
 	double evaluate();
 	
-private: 
-    base* operand;
 };
 
 
