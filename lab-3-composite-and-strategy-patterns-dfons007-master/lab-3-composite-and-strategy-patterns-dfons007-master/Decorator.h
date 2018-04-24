@@ -6,11 +6,9 @@
 class BaseDecorator : public base
 {
 public:
-
+	BaseDecorator() {}
 	virtual double evaluate() = 0;
 	
-private: 
-	base* operand;
 };
 
 

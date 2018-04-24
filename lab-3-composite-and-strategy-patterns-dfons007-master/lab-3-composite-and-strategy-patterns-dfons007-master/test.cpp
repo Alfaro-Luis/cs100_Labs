@@ -190,7 +190,7 @@ int main() {
 
 	cout << "------------------------------------" << "\n";
 	cout << "Testing all classes put together" << "\n" << "\n";
-	cout << "The Absolute value of the ceiling of the floor of -23.2" << "\n";
+	cout << "The Absolute value of the Ceiling of the Floor of -23.2" << "\n";
 	cout << "The value that should be yielded is 24." << "\n";
 	AbsoluteValue* Test3 = new AbsoluteValue(new Ceiling(new Floor(new Op(-23.2))));
 	cout << "Final Value: " << Test3->evaluate() << "\n";
